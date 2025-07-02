@@ -1,34 +1,21 @@
-const img = document.querySelector("img");
+const list = document.createElement('ul');
+const info = document.createElement('p');
+const html = document.querySelector('html');
 
-img.addEventListener("click", () => {
-	const src = img.getAttribute("src");
-	if (src === "images/firefox1.png") {
-		img.setAttribute("src", "images/firefox2.png");
-	} else {
-		img.setAttribute("src", "images/firefox1.png");
-	}
-})
+info.textContent = 'Below is a dynamic list. Click anywhere on the page to add a new list item. Click an existing list item to change its text to something else.';
 
-let but = document.querySelector("button");
-let heading = document.querySelector("h1");
+document.body.appendChild(info);
+document.body.appendChild(list);
 
-function set_user_name() {
-	let name = prompt("Please enter your name: ");
-	if (!name) {
-		set_user_name();
-	} else {
-		localStorage.setItem("name", name);
-		heading.innerHTML = "Mozilla is cool, " + name;
+html.onclick = function () {
+	const listItem = document.createElement('li');
+	const listContent = prompt('What content do you want the list item to have?');
+	listItem.textContent = listContent;
+	list.appendChild(listItem);
+
+	listItem.onclick = function (e) {
+		e.stopPropagation();
+		const listContent = prompt('Enter new content for your list item');
+		this.textContent = listContent;
 	}
 }
-
-if (!localStorage.getItem("name")) {
-	set_user_name();
-} else {
-	let stored_name = localStorage.getItem("name");
-	heading.innerHTML = "Mozilla is cool, " + stored_name;
-}
-
-but.addEventListener("click", () => {
-	set_user_name();
-});
