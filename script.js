@@ -80,7 +80,7 @@ function resetDanmaku(danmaku) {
 
 	generateDanmakuContent(danmaku);
 
-	danmaku.speed = getRandomFloat(0.5, 1.5);
+	danmaku.speed = getRandomFloat(1, 2);
 }
 
 class Danmaku {
