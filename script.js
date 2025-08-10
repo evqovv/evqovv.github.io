@@ -122,7 +122,7 @@ function generateDanmakuContent(danmaku) {
 }
 
 function resetDanmaku(danmaku) {
-	danmaku.x = window.innerWidth + getRandomNumber(0, 300);
+	danmaku.x = window.innerWidth + getRandomNumber(150, 500);
 	danmaku.p.style.transform = `translateX(${danmaku.x}px)`;
 
 	danmaku.p.style.color = getRandomColorExceptBlack();
@@ -199,7 +199,7 @@ function danmakuAnimate() {
 	requestAnimationFrame(danmakuAnimate);
 }
 
-let danmakuArray = createDanmakuRows();
+let danmakuArray;
 
 function init() {
 	const popup = createPopup();
@@ -208,6 +208,8 @@ function init() {
 		if (e.code === 'Space' || e.code === 'Enter') {
 			popup.remove();
 			window.removeEventListener('keydown', onKey);
+
+			danmakuArray = createDanmakuRows()
 
 			animationStart();
 		}
