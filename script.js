@@ -118,18 +118,18 @@ function generateDanmakuContent(danmaku) {
 
 	danmaku.p.lang = birthdayWish.code;
 	danmaku.p.textContent = birthdayWish.str + `(${birthdayWish.lang})`;
-	danmaku.p.textContent += emoji.at(getRandomNumber(0, emoji.length - 1)).repeat(getRandomNumber(0, 7));
+	danmaku.p.textContent += emoji.at(getRandomNumber(0, emoji.length - 1));
 }
 
 function resetDanmaku(danmaku) {
-	danmaku.x = window.innerWidth + getRandomNumber(150, 500);
+	danmaku.x = window.innerWidth + getRandomNumber(150, 700);
 	danmaku.p.style.transform = `translateX(${danmaku.x}px)`;
 
 	danmaku.p.style.color = getRandomColorExceptBlack();
 
 	generateDanmakuContent(danmaku);
 
-	danmaku.speed = getRandomFloat(1, 2);
+	danmaku.speed = this.speed = 300 + getRandomNumber(0, 50);
 }
 
 class Danmaku {
@@ -184,11 +184,18 @@ function createDanmakuRows() {
 	return danmakuArray;
 }
 
-function danmakuAnimate() {
-	for (const danmaku of danmakuArray) {
-		danmaku.x -= danmaku.speed;
+let lastTimestamp = null;
 
-		if (danmaku.x < -(danmaku.widthCached)) {
+function danmakuAnimate(timestamp) {
+	if (!lastTimestamp) {
+		lastTimestamp = timestamp;
+	}
+	const deltaTime = (timestamp - lastTimestamp) / 1000;
+
+	for (const danmaku of danmakuArray) {
+		danmaku.x -= danmaku.speed * deltaTime;
+
+		if (danmaku.x < -danmaku.widthCached) {
 			resetDanmaku(danmaku);
 		}
 		else {
@@ -196,10 +203,11 @@ function danmakuAnimate() {
 		}
 	}
 
+	lastTimestamp = timestamp;
 	requestAnimationFrame(danmakuAnimate);
 }
 
-let danmakuArray;
+let danmakuArray = null;
 
 function init() {
 	const popup = createPopup();
