@@ -69,7 +69,7 @@ function generateDanmakuContent(danmaku) {
 
 	danmaku.p.lang = birthdayWish.code;
 	danmaku.p.textContent = birthdayWish.str;
-	danmaku.p.textContent += emoji.at(0, emoji.length - 1);
+	danmaku.p.textContent += emoji.at(getRandomNumber(0, emoji.length - 1)).repeat(getRandomNumber(0, 7));
 }
 
 function resetDanmaku(danmaku) {
@@ -80,7 +80,7 @@ function resetDanmaku(danmaku) {
 
 	generateDanmakuContent(danmaku);
 
-	danmaku.speed = getRandomFloat(0.3, 1);
+	danmaku.speed = getRandomFloat(0.5, 1.5);
 }
 
 class Danmaku {
@@ -99,7 +99,7 @@ class Danmaku {
 
 		requestAnimationFrame(() => {
 			const rect = this.p.getBoundingClientRect();
-    		this.widthCached = rect.width + 100; 
+			this.widthCached = rect.width + 100;
 		});
 	}
 }
@@ -153,6 +153,21 @@ function danmakuAnimate() {
 let danmakuArray = createDanmakuRows();
 
 function init() {
+	const popup = createPopup();
+
+	function onKey(e) {
+		if (e.code === 'Space' || e.code === 'Enter') {
+			popup.remove();
+			window.removeEventListener('keydown', onKey);
+
+			animationStart();
+		}
+	}
+
+	window.addEventListener('keydown', onKey);
+};
+
+function animationStart() {
 	requestAnimationFrame(danmakuAnimate);
 
 	addEventListener('resize', () => {
@@ -161,8 +176,39 @@ function init() {
 		danmakuArray = createDanmakuRows();
 
 		requestAnimationFrame(danmakuAnimate);
-	})
+	});
+}
 
+function createPopup() {
+	const popup = document.createElement('div');
+	popup.style.position = 'fixed';
+	popup.style.top = '50%';
+	popup.style.left = '50%';
+	popup.style.transform = 'translate(-50%, -50%)';
+	popup.style.background = 'rgba(255, 255, 255, 0.1)';
+	popup.style.backdropFilter = 'blur(10px)';
+	popup.style.webkitBackdropFilter = 'blur(10px)';
+	popup.style.borderRadius = '10px';
+	popup.style.padding = "10px 10px";
+	popup.style.color = 'white';
+	popup.style.zIndex = '10000';
+	popup.style.whiteSpace = 'pre-wrap';
+	popup.style.fontSize = 3 + 'vh';
+
+	popup.textContent =
+		`
+Hello, Talia!
+	Happy birthday!!!🎂🎂🎂🥳🥳🥳
+	Wishing u a happy birthday and a joyful year ahead.❤️❤️❤️
+	And on a whim, I made this for u. Time was tight, so it may not that perfect, but I hope u will like this special birthday gift.
+
+
+This is from toto:
+	رورووو يا فتاة الميلاد كل عام و انتي بخير يا اختي المفضلة صح عليكي حركات سيئة بس ما بقدر اعيش بدونك بحبك يا تاليا 💋🤭
+	`;
+	document.body.appendChild(popup);
+
+	return popup;
 }
 
 init();
