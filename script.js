@@ -51,7 +51,56 @@ const birthdayWishes = [
 	{ lang: "Kurdish", code: "ku", str: "Rojbûna te pîroz be, Talia!" },
 	{ lang: "Mongolian", code: "mn", str: "Төрсөн өдрийн мэнд хүргэе, Talia!" },
 	{ lang: "Tibetan", code: "bo", str: "དགའ་སྐྱིད་ལོ་གསར་བའི་ལོ་ལེགས་བཀྲ་ཤིས་བདེ་ལེགས། Talia" },
-	{ lang: "Balinese", code: "ban", str: "Rahajeng warsa anyar, Talia!" }
+	{ lang: "Balinese", code: "ban", str: "Rahajeng warsa anyar, Talia!" },
+	{ lang: "Chinese", code: "zh", str: "希望你天天开心，Talia！" },
+	{ lang: "English", code: "en", str: "Hope you are happy every day, Talia!" },
+	{ lang: "Arabic", code: "ar", str: "أتمنى لك السعادة كل يوم، تاليا!" },
+	{ lang: "Spanish", code: "es", str: "¡Espero que seas feliz todos los días, Talia!" },
+	{ lang: "French", code: "fr", str: "J'espère que tu es heureuse tous les jours, Talia !" },
+	{ lang: "German", code: "de", str: "Ich hoffe, du bist jeden Tag glücklich, Talia!" },
+	{ lang: "Italian", code: "it", str: "Spero che tu sia felice ogni giorno, Talia!" },
+	{ lang: "Russian", code: "ru", str: "Надеюсь, ты счастлива каждый день, Талия!" },
+	{ lang: "Japanese", code: "ja", str: "タリア、毎日幸せでありますように！" },
+	{ lang: "Korean", code: "ko", str: "탈리아, 매일 행복하길 바래!" },
+	{ lang: "Portuguese", code: "pt", str: "Espero que você seja feliz todos os dias, Talia!" },
+	{ lang: "Greek", code: "el", str: "Ελπίζω να είσαι χαρούμενη κάθε μέρα, Talia!" },
+	{ lang: "Dutch", code: "nl", str: "Ik hoop dat je elke dag gelukkig bent, Talia!" },
+	{ lang: "Swedish", code: "sv", str: "Jag hoppas att du är lycklig varje dag, Talia!" },
+	{ lang: "Turkish", code: "tr", str: "Umarım her gün mutlusun, Talia!" },
+	{ lang: "Polish", code: "pl", str: "Mam nadzieję, że jesteś szczęśliwa każdego dnia, Talia!" },
+	{ lang: "Ukrainian", code: "uk", str: "Сподіваюся, ти щаслива кожен день, Талія!" },
+	{ lang: "Thai", code: "th", str: "หวังว่าเธอจะมีความสุขทุกวันนะ Talia!" },
+	{ lang: "Vietnamese", code: "vi", str: "Mong bạn luôn vui vẻ mỗi ngày, Talia!" },
+	{ lang: "Hebrew", code: "he", str: "מקווה שתהיי מאושרת כל יום, Talia!" },
+	{ lang: "Hungarian", code: "hu", str: "Remélem, minden nap boldog vagy, Talia!" },
+	{ lang: "Finnish", code: "fi", str: "Toivon, että olet onnellinen joka päivä, Talia!" },
+	{ lang: "Czech", code: "cs", str: "Doufám, že jsi každý den šťastná, Talia!" },
+	{ lang: "Romanian", code: "ro", str: "Sper să fii fericită în fiecare zi, Talia!" },
+	{ lang: "Bulgarian", code: "bg", str: "Надявам се да си щастлива всеки ден, Talia!" },
+	{ lang: "Slovenian", code: "sl", str: "Upam, da si vsak dan srečna, Talia!" },
+	{ lang: "Croatian", code: "hr", str: "Nadam se da si sretna svaki dan, Talia!" },
+	{ lang: "Serbian", code: "sr", str: "Надам се да си сваки дан срећна, Талија!" },
+	{ lang: "Irish", code: "ga", str: "Tá súil agam go mbeidh tú sona gach lá, Talia!" },
+	{ lang: "Catalan", code: "ca", str: "Espero que siguis feliç cada dia, Talia!" },
+	{ lang: "Basque", code: "eu", str: "Espero dut egunero zoriontsu izan zaitezela, Talia!" },
+	{ lang: "Welsh", code: "cy", str: "Gobeithio byddwch chi'n hapus bob dydd, Talia!" },
+	{ lang: "Icelandic", code: "is", str: "Ég vona að þú sért hamingjusöm á hverjum degi, Talia!" },
+	{ lang: "Maltese", code: "mt", str: "Nispera li tkun kuntenta kuljum, Talia!" },
+	{ lang: "Albanian", code: "sq", str: "Shpresoj që të jesh e lumtur çdo ditë, Talia!" },
+	{ lang: "Swahili", code: "sw", str: "Natumai utakuwa na furaha kila siku, Talia!" },
+	{ lang: "Hausa", code: "ha", str: "Ina fatan za ki yi farin ciki kowace rana, Talia!" },
+	{ lang: "Tagalog", code: "tl", str: "Sana ay masaya ka araw-araw, Talia!" },
+	{ lang: "Nepali", code: "ne", str: "तिमी हरेक दिन खुशी रहोस्, Talia!" },
+	{ lang: "Bengali", code: "bn", str: "আশা করি তুমি প্রতিদিন সুখী থাকবে, Talia!" },
+	{ lang: "Tamil", code: "ta", str: "தினமும் மகிழ்ச்சி அடைய வாழ்த்துகிறேன், Talia!" },
+	{ lang: "Kannada", code: "kn", str: "ನೀವು ಪ್ರತಿದಿನವೂ ಖುಷಿಯಾಗಿರಲಿ, Talia!" },
+	{ lang: "Malayalam", code: "ml", str: "നീ എല്ലാ ദിവസവും സന്തോഷവാനായിരിക്കുക, Talia!" },
+	{ lang: "Occitan", code: "oc", str: "Espèri que siás urós cada jorn, Talia!" },
+	{ lang: "Pashto", code: "ps", str: "هيله لرم چې ته هره ورځ خوشحاله يې، Talia!" },
+	{ lang: "Kurdish", code: "ku", str: "Hêvî dikim her roj kêfxweş bî, Talia!" },
+	{ lang: "Mongolian", code: "mn", str: "Өдөр бүр аз жаргалтай байхыг хүсье, Talia!" },
+	{ lang: "Tibetan", code: "bo", str: "དགའ་སྐྱིད་ལོ་གསར་བའི་ལོ་ལེགས་བཀྲ་ཤིས་བདེ་ལེགས། ཉིན་ཚེས་རྒྱུན་ལ་བདེ་སྐྱིད་བར་འགྱོ་གི་འདུག། Talia" },
+	{ lang: "Balinese", code: "ban", str: "Mugi rahayu sareng seneng rahina, Talia!" },
 ];
 
 const emoji = [
@@ -68,7 +117,7 @@ function generateDanmakuContent(danmaku) {
 	let birthdayWish = birthdayWishes.at(getRandomNumber(0, birthdayWishes.length - 1));
 
 	danmaku.p.lang = birthdayWish.code;
-	danmaku.p.textContent = birthdayWish.str;
+	danmaku.p.textContent = birthdayWish.str + `(${birthdayWish.lang})`;
 	danmaku.p.textContent += emoji.at(getRandomNumber(0, emoji.length - 1)).repeat(getRandomNumber(0, 7));
 }
 
